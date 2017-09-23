@@ -1,0 +1,20 @@
+body {
+    background: url("../../assets/images/brushDark.png");
+}
+
+.button {
+    background: darkturquoise;
+    color: snow;
+    margin: 1%;
+    float: left;
+}
+
+#sportForm {
+    float: right;
+    margin: 3%;
+}
+
+#add {
+    float: right;
+    margin: 5%;
+}
