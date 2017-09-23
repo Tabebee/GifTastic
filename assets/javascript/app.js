@@ -32,14 +32,17 @@ $("#add").on("click", function(event) {
 
 function gifsOngifsOngifs() {
 
+    $("#sports").empty();
+
     var sport = $(this).attr("data-name");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + sport + limit + key;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + sport + limit + key;
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).done(function(response) {
         // $("#sports").empty();
+        console.log(response.data);
         var results = response.data;
 
         for (var i = 0; i < results.length; i++) {
@@ -47,36 +50,37 @@ function gifsOngifsOngifs() {
 
             var gifimg = $("<img>");
             var rating = "Rating: " + results[i].rating;
+            var orig = results[i].images.original.url;
 
-            gifimg.attr('src', results[i].original_still);
+            gifimg.attr('src', orig);
+            gifimg.attr('data-state', 'still');
+            gifimg.attr('data-still', results[i].images.original_still.url);
+            gifimg.attr('data-animate', results[i].images.looping.url);
 
+            gifimg.addClass("class");
+
+            $("#sports").append("<p>" + rating);
             $("#sports").append(gifimg);
-            $("#sports").prepend(rating);
+            // $(gifimg).append(rating);
         }
         myButtons();
     })
 }
 
-// $("#sportButtons").on("click", function() {
-//     var sport = $(this).attr("data-name");
-//     var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + sport + "&api_key=p61cW0ySxTXCRmZWsUKICmpiMZqEKYjc";
-//     $.ajax({
-//         url: queryURL,
-//         method: "GET"
-//     }).done(function (response) {
-//         var url = response.data.url;
-//         var image = $("<img>");
-//         image.attr("src", url);
-//         // image.attr("alt", button.val());
-//         console.log(but);
-//         $("#sports").append(image);
-//     })
-// });
-//
-// $(".button").on("click", function() {
-//     console.log("here")
-// });
+$(document).on("click",".class" ,function() {
+    var state = $(this).attr("data-state");
 
+    if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+    } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+    }
+});
+
+$(document).on("click", ".button", gifsOngifsOngifs);
 
 myButtons();
-gifsOngifsOngifs();
+// gifsOngifsOngifs();
+
