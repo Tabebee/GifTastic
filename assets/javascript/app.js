@@ -55,9 +55,10 @@ function gifsOngifsOngifs() {
             gifimg.attr('src', orig);
             gifimg.attr('data-state', 'still');
             gifimg.attr('data-still', results[i].images.original_still.url);
-            gifimg.attr('data-animate', results[i].images.looping.url);
+            console.log(results[i].images);
+            gifimg.attr('data-animate', results[i].images.original.url);
 
-            gifimg.addClass("class");
+            gifimg.addClass("gifimg");
 
             $("#sports").append("<p>" + rating);
             $("#sports").append(gifimg);
@@ -67,15 +68,15 @@ function gifsOngifsOngifs() {
     })
 }
 
-$(document).on("click",".class" ,function() {
+$(document).on("click",".gifimg" ,function() {
     var state = $(this).attr("data-state");
 
-    if (state === "still") {
-        $(this).attr("src", $(this).attr("data-animate"));
-        $(this).attr("data-state", "animate");
+    if (state === 'still') {
+        $(this).attr('src', $(this).attr('data-animate'));
+        $(this).attr('data-state', 'animate');
     } else {
-        $(this).attr("src", $(this).attr("data-still"));
-        $(this).attr("data-state", "still");
+        $(this).attr('src', $(this).attr('data-still'));
+        $(this).attr('data-state', 'still');
     }
 });
 
