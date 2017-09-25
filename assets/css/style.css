@@ -30,6 +30,7 @@ header {
     font-size: 20px;
     background: darkturquoise;
     padding: 2%;
+    color: snow;
 }
 
 #sports {
@@ -37,8 +38,15 @@ header {
     clear: both;
 }
 
-img {
+img{
     height: 300px;
     width: 300px;
-    margin: .5%;
+    /*float: left;*/
+    margin: 30px 30px 30px 30px;
+    /*display: inline;*/
+}
+
+p {
+    /*float: left;*/
+    margin-left: 30px;
 }

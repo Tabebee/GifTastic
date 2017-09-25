@@ -50,7 +50,7 @@ function gifsOngifsOngifs() {
 
             var gifimg = $("<img>");
             var rating = "Rating: " + results[i].rating;
-            var orig = results[i].images.original.url;
+            var orig = results[i].images.original_still.url;
 
             gifimg.attr('src', orig);
             gifimg.attr('data-state', 'still');
@@ -60,7 +60,7 @@ function gifsOngifsOngifs() {
 
             gifimg.addClass("gifimg");
 
-            $("#sports").append("<p>" + rating);
+            $("#sports").append("<p>" + rating + "</p>");
             $("#sports").append(gifimg);
             // $(gifimg).append(rating);
         }
