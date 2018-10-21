@@ -1,7 +1,8 @@
 
 var sports = [  "Soccer", "Hockey", "Football", "Basketball", "Rugby", "Cricket", "Baseball", "College Football",
                 "College Basketball", "Tennis", "Golf", "Boxing", "MMA", "Horse Racing", "ESports", "X Games"];
-var key = "&api_key=p61cW0ySxTXCRmZWsUKICmpiMZqEKYjc";
+var key = require("../../config.js").giphyKey;
+// var key = "&api_key=p61cW0ySxTXCRmZWsUKICmpiMZqEKYjc";
 var limit = "&limit=10";
 // var but;
 function myButtons() {
