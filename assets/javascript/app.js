@@ -1,8 +1,8 @@
 
 var sports = [  "Soccer", "Hockey", "Football", "Basketball", "Rugby", "Cricket", "Baseball", "College Football",
                 "College Basketball", "Tennis", "Golf", "Boxing", "MMA", "Horse Racing", "ESports", "X Games"];
-var key = require("../../config.js").giphyKey;
-// var key = "&api_key=p61cW0ySxTXCRmZWsUKICmpiMZqEKYjc";
+var key = "&api_key=QfwMKTc5QdOIzKJplx2oelwvFRp2jnEQ";
+// console.log(key);
 var limit = "&limit=10";
 // var but;
 function myButtons() {
@@ -16,6 +16,7 @@ function myButtons() {
         but.text(sports[i]);
         but.attr("data-name", sports[i]);
 //    Append buttons to ID
+
         $("#sportButtons").append(but);
     }
 }
@@ -43,7 +44,7 @@ function gifsOngifsOngifs() {
         method: "GET"
     }).done(function(response) {
         // $("#sports").empty();
-        console.log(response.data);
+        console.log('response data ',response.data);
         var results = response.data;
 
         for (var i = 0; i < results.length; i++) {
