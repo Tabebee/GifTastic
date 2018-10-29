@@ -9,7 +9,7 @@ function myButtons() {
     // To prevent duplicate buttons
     $("#sportButtons").empty();
 
-//    For loop to create inital and future buttons from variable sports
+//    For loop to create initial and future buttons from variable sports
     for (var i = 0; i < sports.length; i++) {
         var but = $("<button>");
         but.addClass("button");

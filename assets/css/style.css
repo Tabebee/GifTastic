@@ -21,7 +21,8 @@ header {
 
 #sportForm {
     float: right;
-    margin: 3%;
+    /*margin: 3%;*/
+    margin: -10% 3% 3% 3%
 }
 
 #add {
@@ -53,4 +54,8 @@ p {
 
 .center {
     text-align: center !important;
+}
+
+#sportButtons {
+    width: 75%
 }
