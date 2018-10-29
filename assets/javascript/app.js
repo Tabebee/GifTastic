@@ -26,9 +26,16 @@ $("#add").on("click", function(event) {
     event.preventDefault();
 
     var newInput = $("#sport-input").val().trim();
-    sports.push(newInput);
+    if (newInput === '') {
+        alert("Search for blank gif's is not allowed");
+    } else {
+        sports.push(newInput);
 //  runs function again with inital buttons and new user button
-    myButtons();
+        myButtons();
+    }
+//     sports.push(newInput);
+// //  runs function again with inital buttons and new user button
+//     myButtons();
 });
 
 
@@ -44,11 +51,11 @@ function gifsOngifsOngifs() {
         method: "GET"
     }).done(function(response) {
         // $("#sports").empty();
-        console.log('response data ',response.data);
+        // console.log('response data ',response.data);
         var results = response.data;
 
         for (var i = 0; i < results.length; i++) {
-            console.log(results[i]);
+            // console.log(results[i]);
 
             var gifimg = $("<img>");
             var rating = "Rating: " + results[i].rating;
@@ -57,7 +64,7 @@ function gifsOngifsOngifs() {
             gifimg.attr('src', orig);
             gifimg.attr('data-state', 'still');
             gifimg.attr('data-still', results[i].images.original_still.url);
-            console.log(results[i].images);
+            // console.log(results[i].images);
             gifimg.attr('data-animate', results[i].images.original.url);
 
             gifimg.addClass("gifimg");
