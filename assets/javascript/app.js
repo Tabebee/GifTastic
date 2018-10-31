@@ -3,7 +3,7 @@ var sports = [  "Soccer", "Hockey", "Football", "Basketball", "Rugby", "Cricket"
                 "College Basketball", "Tennis", "Golf", "Boxing", "MMA", "Horse Racing", "ESports", "X Games"];
 var key = "&api_key=QfwMKTc5QdOIzKJplx2oelwvFRp2jnEQ";
 // console.log(key);
-var limit = "&limit=10";
+var limit = "&limit=12";
 // var but;
 function myButtons() {
     // To prevent duplicate buttons
@@ -53,6 +53,7 @@ function gifsOngifsOngifs() {
         // $("#sports").empty();
         // console.log('response data ',response.data);
         var results = response.data;
+        var first3 = [];
 
         for (var i = 0; i < results.length; i++) {
             // console.log(results[i]);
@@ -71,6 +72,11 @@ function gifsOngifsOngifs() {
 
             $("#sports").append("<p>" + rating + "</p>");
             $("#sports").append(gifimg);
+            // console.log(gifimg);
+            // if (i < 3) {
+            //     first3.push(gifimg);
+            // }
+
             // $(gifimg).append(rating);
         }
         myButtons();
