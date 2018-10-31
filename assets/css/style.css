@@ -48,6 +48,7 @@ img{
     width: 20%;
     /*float: left;*/
     margin: 30px 30px 30px 30px;
+    border: 2px solid lime !important;
     /*display: inline;*/
 }
 
