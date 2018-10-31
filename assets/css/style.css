@@ -68,3 +68,7 @@ p {
 input:hover {
     border: 2px solid black !important;
 }
+
+img:hover {
+    border: 2px solid black !important;
+}
