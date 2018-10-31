@@ -3,7 +3,7 @@ var sports = [  "Soccer", "Hockey", "Football", "Basketball", "Rugby", "Cricket"
                 "College Basketball", "Tennis", "Golf", "Boxing", "MMA", "Horse Racing", "ESports", "X Games"];
 var key = "&api_key=QfwMKTc5QdOIzKJplx2oelwvFRp2jnEQ";
 // console.log(key);
-var limit = "&limit=12";
+var limit = "&limit=9";
 // var but;
 function myButtons() {
     // To prevent duplicate buttons
@@ -54,6 +54,8 @@ function gifsOngifsOngifs() {
         // console.log('response data ',response.data);
         var results = response.data;
         var first3 = [];
+        var second3 =[];
+        var last3 =[];
 
         for (var i = 0; i < results.length; i++) {
             // console.log(results[i]);
@@ -70,7 +72,19 @@ function gifsOngifsOngifs() {
 
             gifimg.addClass("gifimg");
 
-            $("#sports").append("<p>" + rating + "</p>");
+            if (i < 3) {
+                first3.push(gifimg);
+            } else if (i < 6) {
+                second3.push(gifimg)
+            } else {
+                last3.push(gifimg)
+            }
+
+            console.log('first', first3);
+            console.log('second', second3);
+            console.log('last', last3);
+
+            $("#sports").append( gifimg,"<p>" + rating + "</p>");
             $("#sports").append(gifimg);
             // console.log(gifimg);
             // if (i < 3) {
@@ -79,6 +93,9 @@ function gifsOngifsOngifs() {
 
             // $(gifimg).append(rating);
         }
+        $("#first3").append(first3);
+        $("#second3").append(second3);
+        $("#last3").append(last3);
         myButtons();
     })
 }
