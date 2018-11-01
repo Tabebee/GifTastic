@@ -42,6 +42,9 @@ $("#add").on("click", function(event) {
 function gifsOngifsOngifs() {
 
     $("#sports").empty();
+    $("#first3").empty();
+    $("#second3").empty();
+    $("#last3").empty();
 
     var sport = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + sport + limit + key;
