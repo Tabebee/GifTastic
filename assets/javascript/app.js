@@ -1,6 +1,6 @@
 
 var sports = [  "Soccer", "Hockey", "Football", "Basketball", "Rugby", "Cricket", "Baseball", "College Football",
-                "College Basketball", "Tennis", "Golf", "Boxing", "MMA", "Horse Racing", "ESports", "X Games"];
+                "College Basketball", "Tennis", "Golf", "Boxing", "MMA", "Horse Racing", "ESports", "X Games", "Rugby"];
 var key = "&api_key=QfwMKTc5QdOIzKJplx2oelwvFRp2jnEQ";
 // console.log(key);
 var limit = "&limit=9";
