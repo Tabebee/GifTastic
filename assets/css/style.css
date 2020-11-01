@@ -36,6 +36,7 @@ header {
     background: darkturquoise;
     padding: 2%;
     color: snow;
+    margin-right: none; /* This is to fix a spacing issue to line it up better with input*/
 }
 
 #sports {
