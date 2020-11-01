@@ -61,7 +61,7 @@ function gifsOngifsOngifs() {
         var last3 =[];
 
         for (var i = 0; i < results.length; i++) {
-             console.log("RESULTS: "results[i]);
+             console.log("RESULTS: ,"results[i]);
 
             var gifimg = $("<img>");
             var rating = "Rating: " + results[i].rating;
