@@ -1,6 +1,6 @@
 
 var sports = [  "Soccer", "Hockey", "Football", "Basketball", "Rugby", "Cricket", "Baseball", "College Football",
-                "College Basketball", "Tennis", "Golf", "Boxing", "MMA", "Horse Racing", "ESports", "X Games"];
+                "College Basketball", "Tennis", "Golf", "Boxing", "MMA", "Horse Racing", "ESports", "X Games", "Rugby"];
 var key = "&api_key=QfwMKTc5QdOIzKJplx2oelwvFRp2jnEQ";
 // console.log(key);
 var limit = "&limit=9";
@@ -42,6 +42,9 @@ $("#add").on("click", function(event) {
 function gifsOngifsOngifs() {
 
     $("#sports").empty();
+    $("#first3").empty();
+    $("#second3").empty();
+    $("#last3").empty();
 
     var sport = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + sport + limit + key;
