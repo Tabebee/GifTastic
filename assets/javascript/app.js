@@ -65,6 +65,7 @@ function gifsOngifsOngifs() {
 
             var gifimg = $("<img>");
             var rating = "Rating: " + results[i].rating;
+            var title = "Title: " + results[i].title;
             var orig = results[i].images.original_still.url;
 
             gifimg.attr('src', orig);
@@ -87,7 +88,9 @@ function gifsOngifsOngifs() {
             console.log('second', second3);
             console.log('last', last3);
 
+            $("#sports").append( gifimg,"<p>" + title + "</p>");
             $("#sports").append( gifimg,"<p>" + rating + "</p>");
+            $("#sports").append( gifimg,"<p>" + "--------------------------------" + "</p>");
             $("#sports").append(gifimg);
             // console.log(gifimg);
             // if (i < 3) {
