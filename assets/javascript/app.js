@@ -30,6 +30,8 @@ $("#add").on("click", function(event) {
         alert("Search for blank gif's is not allowed");
     } else {
         sports.push(newInput);
+        // Clear Input after clicking submit
+        $("#sport-input").val('');
 //  runs function again with inital buttons and new user button
         myButtons();
     }
@@ -55,13 +57,14 @@ function gifsOngifsOngifs() {
     }).done(function(response) {
         // $("#sports").empty();
         // console.log('response data ',response.data);
-        var results = response.data;
+        var results = response.data;              console.log("Response: ", response);
+
         var first3 = [];
         var second3 =[];
         var last3 =[];
 
         for (var i = 0; i < results.length; i++) {
-             console.log("RESULTS: ,"results[i]);
+             console.log("RESULTS: ", results[i]);
 
             var gifimg = $("<img>");
             var rating = "Rating: " + results[i].rating;
@@ -90,7 +93,7 @@ function gifsOngifsOngifs() {
 
             $("#sports").append( gifimg,"<p>" + title + "</p>");
             $("#sports").append( gifimg,"<p>" + rating + "</p>");
-            $("#sports").append( gifimg,"<p>" + "--------------------------------" + "</p>");
+            $("#sports").append( gifimg,"<p>" + "-----------------------------------------" + "</p>");
             $("#sports").append(gifimg);
             // console.log(gifimg);
             // if (i < 3) {
