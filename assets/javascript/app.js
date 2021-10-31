@@ -3,7 +3,8 @@ var sports = [  "Soccer", "Hockey", "Football", "Basketball", "Rugby", "Cricket"
                 "College Basketball", "Tennis", "Golf", "Boxing", "MMA", "Horse Racing", "ESports", "X Games", "Rugby"];
 var key = "&api_key=QfwMKTc5QdOIzKJplx2oelwvFRp2jnEQ";
 // console.log(key);
-var limit = "&limit=9";
+var limitCount = 9;
+var limit = "&limit=" + limitCount;
 // var but;
 function myButtons() {
     // To prevent duplicate buttons
@@ -105,6 +106,7 @@ function gifsOngifsOngifs() {
         $("#first3").append(first3);
         $("#second3").append(second3);
         $("#last3").append(last3);
+        $("#viewMore").css("display", "block");
         myButtons();
     })
 }
@@ -124,5 +126,7 @@ $(document).on("click",".gifimg" ,function() {
 $(document).on("click", ".button", gifsOngifsOngifs);
 
 myButtons();
-// gifsOngifsOngifs();
 
+function SeeMore() {
+
+}

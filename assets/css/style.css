@@ -77,3 +77,12 @@ img:hover {
 #formLabel {
     color: snow
 }
+
+#viewMore {
+    margin: 2%;
+    font-size: 20px;
+    background: darkturquoise;
+    padding: 2%;
+    color: snow;
+    display: none;
+}
